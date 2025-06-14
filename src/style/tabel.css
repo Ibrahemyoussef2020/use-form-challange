@@ -1,0 +1,45 @@
+.tabel{
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #777;
+    border-top: 0;
+    border-spacing: 0px;
+    font-size: 12px;
+}
+
+.tabel table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabel tfoot{
+    display: block;
+    padding: 0 1rem ;
+}
+
+.tabel tr {
+    display:flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .5rem;
+    border-top: 1px solid #777;
+}
+
+.tabel .title-head , .title-item{
+    width: 200px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tabel .price-head , .tabel .price-item{
+    min-width: 50px;
+    text-align: center;
+    flex: 1;  
+}
+
+.tabel .cat-head , .tabel .cat-item{
+    min-width: 50px;
+    text-align: center;
+    flex: 1;  
+}

@@ -1,0 +1,27 @@
+.field{
+    display: block;
+    width: 100%;
+    font-size:1.1rem;
+    margin: .75rem auto;
+    background-color: inherit;
+    color: #fff;
+
+}
+
+.field h3{
+    font-size:1rem;
+    font-weight: 300;
+    margin: 0 0 4px 0;
+    text-align: start;
+}
+
+.field input{
+    width: 100%;
+    padding: 4px .5rem;
+    background-color: inherit;
+    color: #fff;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}

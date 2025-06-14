@@ -1,0 +1,10 @@
+.product-list{
+    width: 80%;
+    max-width: 700px;
+    min-height:100dvh;
+    padding: 2rem 1.5rem;
+    margin: 2rem auto;
+    border-radius: .5rem;
+    background-color: #222;
+    color: #fff;
+}
