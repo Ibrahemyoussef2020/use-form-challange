@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useRef } from "react";
+import { toast } from 'react-toastify';
+
 import { userSchema, productSchema } from "../helpers";
 import useProducts from "./useProducts"; 
+import { hasEmptyValue } from "../utils";
 
 const useCustomForm = () => {
   const {
@@ -76,6 +79,13 @@ const updateUiProduct = (id) => {
     isEditing: false,
   };
 
+  
+
+   if (hasEmptyValue(updatedProduct)) {
+     toast.error('You should fill all fields')
+     return
+  }
+
   productsForm.setValue(`products.${index}`, updatedProduct, {
     shouldValidate: false,
     shouldDirty: true,
@@ -120,6 +130,11 @@ const submitForm = async (e) => {
 
   let userData , productData;
 
+  if (hasEmptyValue(usersForm.getValues('user'))) {
+     toast.error('You should fill all fields')
+     return
+  }
+
   if (localStorage.getItem('user')) {
      userData = JSON.parse(localStorage.getItem('user') ) ;
   }
@@ -139,10 +154,20 @@ const submitForm = async (e) => {
     payload
   );
   
-
   
-  await mutateAsyncProduct(payload);
+  await mutateAsyncProduct(payload).then(()=>{
+    toast.success('has added')
+  });
+
+
 }
+
+
+ console.log(
+      'errrrrrrrrrrr',
+      usersForm.formState.errors
+    );
+    
 
   return {
     products,

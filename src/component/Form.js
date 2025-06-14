@@ -10,6 +10,9 @@ import Submit from './Submit';
 const Form = () => {
  
     const { submitForm , userErrors , userRegister} = useCustomForm();
+
+
+   
   
     return (
     <form onSubmit={(e)=>submitForm(e)} className='form' id='form' name='form'>
@@ -18,7 +21,8 @@ const Form = () => {
             name={`user.name`}
             label="Username"
             register={userRegister}
-            error={userErrors.name}
+            error={userErrors?.user?.name}
+             
         />
 
          <Field 
@@ -26,7 +30,7 @@ const Form = () => {
             name={`user.role`}
             label="Role"
             register={userRegister}
-            error={userErrors.role}
+            error={userErrors?.user?.role}
         />
          <Submit />
     </form>
